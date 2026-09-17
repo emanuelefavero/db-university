@@ -1,5 +1,3 @@
-// Tables
-
 Table departments {
   id int [pk, increment]
   name varchar [not null]
@@ -8,13 +6,13 @@ Table departments {
 Table degree_programs {
   id int [pk, increment]
   name varchar [not null]
-  department_id int [not null]
+  department_id int [not null, ref: > departments.id]
 }
 
 Table courses {
   id int [pk, increment]
   name varchar [not null]
-  degree_program_id int [not null]
+  degree_program_id int [not null, ref: > degree_programs.id]
 }
 
 Table teachers {
@@ -25,20 +23,20 @@ Table teachers {
 Table students {
   id int [pk, increment]
   name varchar [not null]
-  degree_program_id int [not null]
+  degree_program_id int [not null, ref: > degree_programs.id]
 }
 
 Table exam_sessions {
   id int [pk, increment]
   date date [not null]
-  course_id int [not null]
+  course_id int [not null, ref: > courses.id]
 }
 
 // Junction Tables
 
 Table courses_teachers {
-  teacher_id int [not null]
-  course_id int [not null]
+  teacher_id int [not null, ref: > teachers.id]
+  course_id int [not null, ref: > courses.id]
 
   indexes {
     (teacher_id, course_id) [pk]
@@ -46,24 +44,11 @@ Table courses_teachers {
 }
 
 Table exam_session_registrations {
-  student_id int [not null]
-  exam_session_id int [not null]
+  student_id int [not null, ref: > students.id]
+  exam_session_id int [not null, ref: > exam_sessions.id]
   grade int [null]
 
   indexes {
     (student_id, exam_session_id) [pk]
   }
 }
-
-// Relationships
-
-Ref: degree_programs.department_id > departments.id
-Ref: courses.degree_program_id > degree_programs.id
-Ref: students.degree_program_id > degree_programs.id
-Ref: exam_sessions.course_id > courses.id
-
-Ref: courses_teachers.teacher_id > teachers.id
-Ref: courses_teachers.course_id > courses.id
-
-Ref: exam_session_registrations.student_id > students.id
-Ref: exam_session_registrations.exam_session_id > exam_sessions.id

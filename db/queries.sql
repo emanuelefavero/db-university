@@ -53,3 +53,11 @@ select
   count(id) as department_count
 from
   departments;
+
+-- How many teachers do not have a phone number? (50)
+select
+  count(id) as teachers_without_phone
+from
+  teachers
+where
+  phone is null;

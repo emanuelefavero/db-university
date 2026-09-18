@@ -28,7 +28,7 @@ select
 from
   courses
 where
-  `period` = "I semestre"
+  `period` = 'I semestre'
   and `year` = 1;
 
 -- 5. Select all exam sessions taking place in the afternoon (after 2:00 PM) on June 20, 2020 (21)
@@ -40,13 +40,13 @@ where
   `date` = '2020-06-20'
   and `hour` > '14:00:00';
 
--- 6. Select all "magistrale" degree programs (38)
+-- 6. Select all 'magistrale' degree programs (38)
 select
   *
 from
   `degrees`
 where
-  `level` = "magistrale";
+  `level` = 'magistrale';
 
 -- 7. How many departments does the university have? (12)
 select

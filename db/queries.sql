@@ -21,3 +21,12 @@ from
   students
 where
   date_of_birth < curdate() - interval 30 year;
+
+-- Select all first-semester courses from the first year of any degree program (286)
+select
+  *
+from
+  courses
+where
+  period = "I semestre"
+  and year = 1;

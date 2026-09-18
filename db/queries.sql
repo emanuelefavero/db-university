@@ -61,3 +61,12 @@ from
   teachers
 where
   phone is null;
+
+-- Count how many students enrolled each year
+select
+  year(enrolment_date) as enrolment_year,
+  count(id) as student_count
+from
+  students
+group by
+  enrolment_year;

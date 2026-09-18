@@ -39,3 +39,7 @@ from
 where
   `date` = '2020-06-20'
   and `hour` > '14:00:00';
+
+-- Select all "magistrale" degree programs (38)
+select * from `degrees`
+where `level` = "magistrale";

@@ -13,3 +13,11 @@ from
   courses
 where
   cfu > 10;
+
+-- Select all students who are over 30 years old
+select
+  *
+from
+  students
+where
+  date_of_birth < curdate() - interval 30 year;

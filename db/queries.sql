@@ -28,8 +28,8 @@ select
 from
   courses
 where
-  period = "I semestre"
-  and year = 1;
+  `period` = "I semestre"
+  and `year` = 1;
 
 -- Select all exam sessions taking place in the afternoon (after 2:00 PM) on June 20, 2020 (21)
 select

@@ -55,3 +55,11 @@ Test every query in the database client, then save the solutions in a text file.
 ## Notes
 
 The populated schema supplied for Phase 2 differs from the schema originally designed in Phase 1. The ER diagram in this repository represents the current database used to run the MySQL queries.
+
+## Resources
+
+- [DrawSQL](https://drawsql.app/) — tool for creating and sharing database diagrams.
+- [dbdiagram.io](https://dbdiagram.io/) — another tool for creating and sharing database diagrams.
+- [DBML](https://www.dbml.org/) — database markup language for designing and sharing database diagrams.
+- [MySQL Workbench](https://www.mysql.com/products/workbench/) — official MySQL graphical user interface for database design and query execution.
+- [DataGrip](https://www.jetbrains.com/datagrip/) — database management tool for working with multiple database systems.

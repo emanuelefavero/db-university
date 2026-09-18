@@ -1,35 +1,57 @@
 # DB University
 
-A database relationships planning exercise from my web dev course
+A two-phase database exercise from my web dev course, covering ER modelling and introductory MySQL queries.
+
+## ER diagram
+
+![University database ER diagram](er-diagram.webp 'University database ER diagram')
 
 ## Exercise
 
-Design a university database schema based on the following requirements:
+### Phase 1 — Database modelling
 
-- Departments & Degrees: A Department offers multiple Degree Courses.
+Design a relational database that stores the data of a university with the following requirements:
 
-- Courses & Teachers: A Degree Course has multiple Courses; a Course can have multiple Teachers.
+- a university has several departments;
+- each department offers multiple degree programmes;
+- each degree programme includes multiple courses;
+- each course can be taught by multiple teachers;
+- each course has multiple exam sessions;
+- each student is enrolled in one degree programme;
+- each student can register for multiple exam sessions;
+- every exam result must be recorded, including failing grades.
 
-- Students: A Student belongs to one Degree Course.
+Define the entities, their relationships, the table columns, and the appropriate data types. Create the schema with [DrawSQL](https://drawsql.app/) or [dbdiagram.io](https://dbdiagram.io/) and export the ER diagram as an image.
 
-- Exams & Grades: A Course has multiple Exam Sessions. Students can enroll in multiple sessions. Record all exam grades, including fails.
+### Phase 2 — MySQL queries
 
-## Solution
+Create a new database in MySQL Workbench (or another database client), import the provided populated schema, and write the following queries:
 
-### ER Diagram
+1. Select all students born in 1990 (160 results).
+2. Select all courses worth more than 10 credits (479 results).
+3. Select all students over 30 years old.
+4. Select all first-year, first-semester courses from any degree programme (286 results).
+5. Select all exam sessions taking place after 14:00 on 20 June 2020 (21 results).
+6. Select all master's degree programmes (38 results).
+7. Count the university departments (12 departments).
+8. Count the teachers without a phone number (50 teachers).
 
-![er-diagram.jpg](er-diagram.jpg 'ER Diagram')
+Use `GROUP BY` to:
 
-### DBML Schema
+1. count how many students enrolled in each year;
+2. count how many teachers have an office in each building;
+3. calculate the average grade for each exam session;
+4. count the degree programmes offered by each department.
 
-See [db/schema.dbml](db/schema.dbml)
+Test every query in the database client, then save the solutions in a text file.
 
-### SQL Schema
+## Repository contents
 
-See [db/schema.sql](db/schema.sql)
+- [ER diagram](er-diagram.webp) — visual representation of the current database schema.
+- [Provided MySQL schema](db/schema/db_university.sql) — schema and data used for Phase 2.
+- [Query solutions](queries.txt) — the requested MySQL queries.
+- [SQL query file](db/queries.sql) — SQL version of the query solutions.
 
-## References
+## Notes
 
-- [DBML Documentation](https://dbml.dbdiagram.io/home)
-- [DBDiagram](https://dbdiagram.io/home)
-- [DrawSQL](https://drawsql.app/)
+The populated schema supplied for Phase 2 differs from the schema originally designed in Phase 1. The ER diagram in this repository represents the current database used to run the MySQL queries.

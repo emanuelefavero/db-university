@@ -88,3 +88,12 @@ from
   exam_student
 group by
   exam_id;
+
+-- Count how many degree programs there are in each department
+select
+  department_id,
+  count(id) as degree_count
+from
+  `degrees`
+group by
+  department_id;

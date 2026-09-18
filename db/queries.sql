@@ -41,5 +41,15 @@ where
   and `hour` > '14:00:00';
 
 -- Select all "magistrale" degree programs (38)
-select * from `degrees`
-where `level` = "magistrale";
+select
+  *
+from
+  `degrees`
+where
+  `level` = "magistrale";
+
+-- How many departments does the university have? (12)
+select
+  count(id) as department_count
+from
+  departments;

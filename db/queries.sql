@@ -70,3 +70,12 @@ from
   students
 group by
   enrolment_year;
+
+-- Count the teachers who have their office in the same building
+select
+  office_address,
+  count(id) as teacher_count
+from
+  teachers
+group by
+  office_address;

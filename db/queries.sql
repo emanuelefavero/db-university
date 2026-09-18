@@ -79,3 +79,12 @@ from
   teachers
 group by
   office_address;
+
+-- Calculate the average grade for each exam session
+select
+  exam_id,
+  round(avg(vote), 2) as average_grade
+from
+  exam_student
+group by
+  exam_id;

@@ -1,3 +1,4 @@
+-- GROUP BY queries
 -- 1. Count how many students enrolled each year
 select
   year(enrolment_date) year,
@@ -27,10 +28,10 @@ group by
 
 -- 4. Count how many degree programs there are in each department
 select
-  dep.name, count(d.id)
+  dep.name,
+  count(d.id)
 from
   degrees d
-join departments dep
-on d.department_id = dep.id
+  join departments dep on d.department_id = dep.id
 group by
   dep.name;

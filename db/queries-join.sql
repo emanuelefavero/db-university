@@ -80,3 +80,30 @@ where
 order by
   t.surname,
   t.name;
+
+-- 7. BONUS: For each student, select the number of attempts made for each exam, also displaying the highest grade. Then filter the attempts to include only those with a minimum grade of 18
+-- ? having mantiene i tentativi falliti filtrando il risultato dopo il calcolo, al contrario di where
+select
+  s.id as student_id,
+  concat(s.surname, ' ', s.name) as student_name,
+  c.id as course_id,
+  c.name as course_name,
+  count(*) as attempt_count,
+  max(es.vote) as highest_grade
+from
+  students s
+  join exam_student es on es.student_id = s.id
+  join exams e on e.id = es.exam_id
+  join courses c on c.id = e.course_id
+group by
+  s.id,
+  s.name,
+  s.surname,
+  c.id,
+  c.name
+having
+  max(es.vote) >= 18
+order by
+  s.surname,
+  s.name,
+  c.name;

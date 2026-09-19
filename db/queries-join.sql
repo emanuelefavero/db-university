@@ -65,3 +65,18 @@ order by
   `degree`,
   `course`,
   teacher;
+
+-- 6. Select all teachers who teach in the Dipartimento di Matematica (54)
+select distinct
+  t.*
+from
+  teachers t
+  join course_teacher ct on t.id = ct.teacher_id
+  join courses c on ct.course_id = c.id
+  join degrees d on c.degree_id = d.id
+  join departments dep on d.department_id = dep.id
+where
+  dep.name = 'Dipartimento di Matematica'
+order by
+  t.surname,
+  t.name;

@@ -62,7 +62,7 @@ from
 where
   phone is null;
 
--- ORDER BY queries
+-- GROUP BY queries
 -- 1. Count how many students enrolled each year
 select
   year(enrolment_date) as enrolment_year,

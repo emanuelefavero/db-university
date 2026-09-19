@@ -35,3 +35,15 @@ from
   join departments dep on d.department_id = dep.id
 group by
   dep.name;
+
+-- JOIN queries
+-- 1. Select all students enrolled in the "Corso di Laurea in Economia"
+select
+  concat(s.name, " ", s.surname),
+  s.email,
+  d.name
+from
+  students s
+  join degrees d on s.degree_id = d.id
+where
+  d.name = 'Corso di Laurea in Economia'

@@ -1,4 +1,4 @@
--- Count how many students enrolled each year
+-- 1. Count how many students enrolled each year
 select
   year(enrolment_date) year,
   count(id) student_count
@@ -7,7 +7,7 @@ from
 group by
   year;
 
--- Count how many teachers have their office in the same building
+-- 2. Count how many teachers have their office in the same building
 select
   office_address,
   count(id) teacher_count
@@ -16,7 +16,7 @@ from
 group by
   office_address;
 
--- Calculate the average grade for each exam session
+-- 3. Calculate the average grade for each exam session
 select
   exam_id,
   round(avg(vote), 1) average_grade

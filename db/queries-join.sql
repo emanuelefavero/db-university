@@ -23,4 +23,14 @@ select
 from
   exam_student
 group by
-  exam_id
+  exam_id;
+
+-- 4. Count how many degree programs there are in each department
+select
+  dep.name, count(d.id)
+from
+  degrees d
+join departments dep
+on d.department_id = dep.id
+group by
+  dep.name;

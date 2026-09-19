@@ -1,6 +1,6 @@
 # DB University
 
-A two-phase database exercise from my web dev course, covering ER modelling and introductory MySQL queries.
+A database exercise from my web dev course, covering ER modelling and MySQL queries.
 
 ## ER diagram
 
@@ -43,18 +43,30 @@ Use `GROUP BY` to:
 3. calculate the average grade for each exam session;
 4. count the degree programmes offered by each department.
 
+### Phase 3 - JOIN queries
+
+Use `JOIN` to:
+
+1. Select all students enrolled in the Economics Degree Program
+2. Select all Master's Degree Programs in the Department of Neuroscience
+3. Select all courses taught by Fulvio Amato (id=44)
+4. Select all students along with the details of the degree program they are enrolled in and its department, ordered alphabetically by last name and first name
+5. Select all degree programs along with their related courses and teachers
+6. Select all teachers who teach in the Department of Mathematics (54)
+7. BONUS: For each student, select the number of attempts made for each exam, also displaying the highest grade. Then filter the attempts to include only those with a minimum grade of 18.
+
 Test every query in the database client, then save the solutions in a text file.
 
 ## Repository contents
 
+- [SQL query file](queries.sql) — the requested MySQL queries.
+- [SQL query file with JOIN queries](queries-join.sql) — the requested MySQL queries involving JOIN operations.
 - [ER diagram](er-diagram.webp) — visual representation of the current database schema.
 - [Provided MySQL schema](db/schema/db_university.sql) — schema and data used for Phase 2.
-- [Query solutions](queries.txt) — the requested MySQL queries.
-- [SQL query file](db/queries.sql) — SQL version of the query solutions.
 
 ## Notes
 
-The populated schema supplied for Phase 2 differs from the schema originally designed in Phase 1. The ER diagram in this repository represents the current database used to run the MySQL queries.
+The populated schema supplied for Phase 2-3 differs from the schema originally designed in Phase 1. The ER diagram in this repository represents the current database used to run the MySQL queries.
 
 ## Resources
 

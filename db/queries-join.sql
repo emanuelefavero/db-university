@@ -34,3 +34,19 @@ from
   join teachers t on ct.teacher_id = t.id
 where
   t.id = 44;
+
+-- 4. Select all students along with the details of the degree program they are enrolled in and its department, ordered alphabetically by last name and first name
+select
+  concat(s.surname, ' ', s.name) full_name,
+  d.name degree_name,
+  dep.name department_name,
+  d.level level,
+  d.address,
+  d.email,
+  d.website
+from
+  students s
+  join degrees d on s.degree_id = d.id
+  join departments dep on d.department_id = dep.id
+order by
+  full_name asc

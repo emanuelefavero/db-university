@@ -22,3 +22,15 @@ from
 where
   d.name like '%laurea magistrale%'
   and dep.name = 'dipartimento di neuroscienze';
+
+-- 3. Select all courses taught by Fulvio Amato (id=44)
+select
+  concat(t.name, ' ', t.surname),
+  c.name,
+  c.period
+from
+  course_teacher ct
+  join courses c on ct.course_id = c.id
+  join teachers t on ct.teacher_id = t.id
+where
+  t.id = 44;

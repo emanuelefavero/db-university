@@ -62,7 +62,7 @@ Test every query in the database client, then save the solutions in a text file.
 - [SQL query file](queries.sql) — the requested MySQL queries.
 - [SQL query file with JOIN queries](queries-join.sql) — the requested MySQL queries involving JOIN operations.
 - [ER diagram](er-diagram.webp) — visual representation of the current database schema.
-- [Provided MySQL schema](db/schema/db_university.sql) — schema and data used for Phase 2.
+- [Provided MySQL schema](db/db_university.sql) — schema and seed data used for Phase 2-3.
 
 ## Notes
 

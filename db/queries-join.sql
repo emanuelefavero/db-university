@@ -49,4 +49,19 @@ from
   join degrees d on s.degree_id = d.id
   join departments dep on d.department_id = dep.id
 order by
-  full_name asc
+  full_name asc;
+
+-- 5. Select all degree programs along with their related courses and teachers
+select
+  d.name degree,
+  c.name course,
+  concat(t.name, ' ', t.surname) teacher
+from
+  degrees d
+  join courses c on c.degree_id = d.id
+  join course_teacher ct on ct.course_id = c.id
+  join teachers t on t.id = ct.teacher_id
+order by
+  `degree`,
+  `course`,
+  teacher;

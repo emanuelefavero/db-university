@@ -102,7 +102,7 @@ group by
   c.id,
   c.name
 having
-  max(es.vote) >= 18
+  highest_grade >= 18
 order by
   s.surname,
   s.name,

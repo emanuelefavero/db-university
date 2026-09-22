@@ -4,7 +4,8 @@ select
 from
   students
 where
-  year(date_of_birth) = 1990;
+  date_of_birth >= '1990-01-01'
+  and date_of_birth < '1991-01-01';
 
 -- 2. Select all courses worth more than 10 credits (479)
 select
